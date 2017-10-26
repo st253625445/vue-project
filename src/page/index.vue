@@ -1,32 +1,21 @@
 <template>
   <div>
     <Header/>
-    <navSolid/>
-    <div class="article_list">
+    <navSlide/>
+    <div class="container">
     <router-view/>
     </div>
   </div>
 </template>
 <script>
 import Header from '@/components/header.vue'
-import navSolid from '@/components/navSolid.vue'
+import navSlide from '@/components/navSlide.vue'
 
 export default {
-  components: { Header, navSolid },
-  data () {
-    return {
-      list: []
-    }
-  },
-  created () {
-    this.getData()
-  },
-  methods: {
-    getData () {
-      this.$api.get('topics', null, r => {
-        this.list = r.data
-      })
-    }
-  }
+  components: { Header, navSlide }
 }
 </script>
+
+<style lang="scss" scoped>
+@import "../style/scss/_index.scss";
+</style>
