@@ -11,6 +11,6 @@ export default {
 </script>
 
 <style lang="scss">
- @import "./style/reset";
- @import "./style/style";
+@import "./style/reset";
+@import "./style/style";
 </style>

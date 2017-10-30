@@ -1,9 +1,17 @@
 .header {
     width: 100%;
-    height: 8.4375rem /* 135/16 */;
-    position: relative;
+    height: 2.2rem;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
     background: #202b33;
+    >span{
+        position: absolute;
+        font-size: .24rem;
+        top: .05rem;
+        right: 2.4rem;
+        color: #00fcff;
+        line-height: .37rem;
+    }
 }

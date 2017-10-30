@@ -1,9 +1,8 @@
 .container {
-  position: absolute;
-  top: 8.4375rem /* 135/16 */;
-  left: 8.4375rem /* 135/16 */;
-  bottom: 0;
-  right: 0;
-  width: 100%;
+  position: relative;
+  height: 100%;
+  width: 17.85rem;
+  padding-top: 2.2rem;
+  padding-left: 1.35rem;
   background: red;
 }

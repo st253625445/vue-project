@@ -1,11 +1,8 @@
 <template>
   <header class="header">
-    <div class="header-title">
-      <span>政府财政地图</span>
-      <userIcon/>
-    </div>
+    <span>政府财政地图</span>
+    <userIcon/>
     <div class="header-data-box">
-      
     </div>
   </header>
 </template>
