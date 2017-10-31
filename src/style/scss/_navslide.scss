@@ -7,5 +7,28 @@
     z-index: 100;
     cursor: pointer;
     box-sizing: border-box;
-    background: blue;
-  }
+    background: #000;
+	font-size: .2rem;
+	ul{
+		width: 100%;
+		height: 100%;
+		display: table;
+		li{
+			display: table-row;
+			span{
+				color: #00fcff;
+				display: table-cell;
+				vertical-align: middle;
+			}
+			&.router-link-active{
+				background: url(../assets/navbg.png) repeat-y;
+				background-size: contain;
+			}
+			&:hover{
+				span{
+					color:#fff;
+				}
+			}
+		}
+	}
+}

@@ -14,4 +14,12 @@
         color: #00fcff;
         line-height: .37rem;
     }
+    .header-data-box{
+        position: relative;
+        background: #000;
+        clear: both;
+        height: 1.68rem;
+        top: .52rem;
+        z-index: 99;
+    }
 }
