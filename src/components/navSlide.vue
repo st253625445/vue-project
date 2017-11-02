@@ -1,7 +1,7 @@
 <template>
   <div class="slide-nav">
     <ul>
-      <router-link tag="li" v-for="nav in navs" :to="{ path: nav.path,activeClass: '' }"><span>{{nav.text}}</span></router-link>
+      <router-link tag="li" v-for="nav in navs" :key="nav.path" :to="{ path: nav.path}"><span>{{nav.text}}</span></router-link>
     </ul>
   </div>
 </template>

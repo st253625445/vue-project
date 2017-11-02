@@ -1,7 +1,7 @@
 <template>
-  <div class="user-icon" @mouseover = 'userShow'>
+  <div class="user-icon" @mouseover = 'userShow' @mouseout="userShow">
     <img src="../../assets/usericon.png" alt="用户信息">
-    <ul v-show="isShow">
+    <ul :class="{isShow:isShow}">
       <li>基本信息</li>
       <li>修改密码</li>
       <li>退出登录</li>
@@ -18,7 +18,7 @@
     },
     methods: {
       userShow () {
-  
+        this.isShow = !this.isShow
       }
     }
   }
@@ -54,6 +54,9 @@ ul {
   box-sizing: border-box;
   display: none;
   z-index: 9999;
+  &.isShow{
+    display: block;
+  }
   li {
     font-size: 0.14rem;
     line-height: 0.3rem;
