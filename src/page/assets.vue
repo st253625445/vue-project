@@ -1,8 +1,6 @@
 <template>
   <div class="v-box page-assets">
-    <ovChinaMapBox/>
     <div class="v-box-gap"></div>
-    <ovCityDebt/>
   </div>
 </template>
 

@@ -233,7 +233,7 @@ export default {
                 borderColor: '#0ba2a8'
               }
             },
-            data: this.provinceBgColor
+            data: this.provinceBgColor()
           },
           {
             name: 'city',
@@ -245,6 +245,72 @@ export default {
             symbolSize: function (val) {
               if (val[1] === 23.1152) return 20
               else return 10
+            },
+            tooltip: {
+              formatter: function (params) {
+                return params.name === '南宁'
+                  ? '<div style="text-align:left; border-bottom:1px solid #555;padding-bottom:5px;margin-bottom:5px;">A市</div>' +
+                      '综合财力发展水平：' +
+                      params.value[2].toFixed(2) +
+                      '<br>财政自给率：' +
+                      params.value[3].toFixed(2) +
+                      '%<br>财政收入增长率：' +
+                      params.value[4].toFixed(2) +
+                      '%<br>固定资产投资增长率：' +
+                      params.value[5].toFixed(2) +
+                      '%<br>税收收入占比：' +
+                      params.value[6].toFixed(2) +
+                      '%<br>城市等级得分：' +
+                      params.value[7].toFixed(2) +
+                      '<br>'
+                  : '<div style="text-align:left; border-bottom:1px solid #555;padding-bottom:5px;margin-bottom:5px;">' +
+                      params.name +
+                      '</div>综合财力发展水平：' +
+                      params.value[2].toFixed(2) +
+                      '<br>财政自给率：' +
+                      params.value[3].toFixed(2) +
+                      '%<br>财政收入增长率：' +
+                      params.value[4].toFixed(2) +
+                      '%<br>固定资产投资增长率：' +
+                      params.value[5].toFixed(2) +
+                      '%<br>税收收入占比：' +
+                      params.value[6].toFixed(2) +
+                      '%<br>城市等级得分：' +
+                      params.value[7].toFixed(2) +
+                      '<br>'
+              }
+            },
+            itemStyle: {
+              normal: {
+                color: function (params) {
+                  return (
+                    params.value[2] >= 8.5
+                      ? (params.color = '#ff8ee6')
+                      : params.value[2] >= 7
+                        ? (params.color = '#ffda2b')
+                        : (params.color = '#aedeff'),
+                    params.color
+                  )
+                }
+              }
+            },
+            label: {
+              normal: {
+                formatter: function (params) {
+                  return params.name === '南宁'
+                    ? 'A市 (' + params.value[2].toFixed(2) + ')'
+                    : ''
+                },
+                position: 'bottom',
+                show: !0,
+                color: '#fff',
+                textStyle: {
+                  fontSize: 16
+                }
+              },
+              emphasis: {
+                show: !0
+              }
             },
             data: this.convertData(res.data)
           }
@@ -359,6 +425,7 @@ export default {
   position: relative;
   width: 100%;
   height: 100%;
+  text-align: left;
   span {
     display: block;
     position: absolute;
